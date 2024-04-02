@@ -1,0 +1,205 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* My CSS */
+body {
+  background-color: #C5BEAA;
+  color: #28356A;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+
+nav {
+  background-color: #28356A;
+  color: #C5BEAA;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+nav a {
+  color: #C5BEAA;
+  text-decoration: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 20px;
+  padding-right: 20px;
+  padding-right: 20px;
+  margin: 0;
+  color: #C5BEAA;
+}
+
+footer {
+  background-color: #28356A;
+  color: #C5BEAA;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  position: fixed;
+  bottom: 0;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #28356A;
+  color: #C5BEAA;
+  border-radius: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+}
+
+label {
+  text-align: left;
+}
+
+.form-input {
+  width: 80%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border: none;
+}
+
+.form-textarea {
+  width: 80%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  resize: vertical;
+  border-radius: 10px;
+  border: none;
+}
+
+.submit-button {
+  width: 80%;
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Product styling */
+/* .products-container img {
+  max-width: 70%;
+  border-radius: 10px;
+}
+
+.products-container {
+  margin: 10px 20px 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.product {
+  background-color: red;
+  margin-top: 20px;
+  padding: 20px;
+  align-items: center;
+} */
+.products-container {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  /* Stack the title, price, and image vertically */
+  align-items: center;
+  /* Align items to the start of the column */
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #88837593;
+  padding: 40px;
+}
+
+.product-info {
+  margin-right: 20px;
+  /* Add spacing between info and image */
+}
+
+.product-title {
+  margin-bottom: 5px;
+  /* Add spacing between title and price */
+}
+
+.product-image {
+  max-width: 200px;
+  border-radius: 10px;
+}
