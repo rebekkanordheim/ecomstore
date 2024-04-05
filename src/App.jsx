@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Products from "./Products";
 import ProductDetail from "./ProductDetail";
 import ContactPage from "./ContactPage";
+import Home from "./Home";
 import "./App.css";
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/product/:productId" element={<ProductDetail />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<h1>Route not found</h1>} />
       </Routes>

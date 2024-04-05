@@ -31,25 +31,25 @@ function Products() {
         return <div>Loading products...</div>;
     }
 
-    if (isError) {
-        return <div>Error loading products</div>;
+    if (isError || !products) {
+        return <div>Error loading product</div>;
     }
 
     return (
         <div className="products-container">
-            {products.map((product) => (
-                <div key={product.id} className="product">
-                    <div className="product-info">
-                        <Link to={`/product/${product.id}`}>
-                            <h2 className="product-title">{product.title}</h2>
-                        </Link>
-                        <p className="product-price">Price: ${product.price}</p>
-                    </div>
-                    <img className="product-image" src={product.image.url} alt={product.image.alt} />
-                </div>
-            ))}
+          {products.map((product) => (
+            <div key={product.id} className="product">
+              <div className="product-info">
+                <Link to={`/product/${product.id}`}>
+                  <h2 className="product-title">{product.title}</h2>
+                </Link>
+                <p className="product-price">Price: ${product.price}</p>
+              </div>
+              <img className="product-image" src={product.image.url} alt={product.image.alt} />
+            </div>
+          ))}
         </div>
-    );
+      );
 }
 
 export default Products;

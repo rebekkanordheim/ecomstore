@@ -1,50 +1,23 @@
-.App {
-  text-align: center;
+:root {
+  --main-color: rgba(255, 105, 180, 0.598);
+  --main-bg-color: white;
+  --secondary-bg-color: rgba(0, 98, 255, 0.467);
+  --text-color: black;
+  --secondary-text-color: rgba(255, 0, 136, 0.636);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 /* My CSS */
 body {
-  background-color: #C5BEAA;
-  color: #28356A;
+  background-color: var(--main-color);
+  color: var(--text-color);
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 2.5rem;
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 header {
@@ -57,16 +30,20 @@ header {
 }
 
 nav {
-  background-color: #28356A;
-  color: #C5BEAA;
+  background-color: var(--main-color);
+  color: var(--text-color);
   border-radius: 10px;
   margin-top: 20px;
   text-transform: uppercase;
 }
 
 nav a {
-  color: #C5BEAA;
+  color: var(--text-color);
   text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 nav li {
@@ -75,19 +52,19 @@ nav li {
   padding-right: 20px;
   padding-right: 20px;
   margin: 0;
-  color: #C5BEAA;
+  color: var(--text-color);
 }
 
 footer {
-  background-color: #28356A;
-  color: #C5BEAA;
+  background-color: var(--main-color);
+  color: var(--text-color);
   padding: 10px;
   border-radius: 10px;
-  margin-top: 20px;
   text-align: center;
   text-transform: uppercase;
   position: fixed;
   bottom: 0;
+  width: 80%;
 }
 
 /* Form styling */
@@ -96,8 +73,8 @@ footer {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #28356A;
-  color: #C5BEAA;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
   border-radius: 10px;
   max-width: 80%;
   margin: 0 auto;
@@ -125,7 +102,9 @@ label {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   border-radius: 10px;
-  border: none;
+  border: 2px solid var(--secondary-bg-color);
+  ;
+  font-size: 18px;
 }
 
 .form-textarea {
@@ -135,71 +114,68 @@ label {
   margin-top: 0.5rem;
   resize: vertical;
   border-radius: 10px;
-  border: none;
+  border: 2px solid var(--secondary-bg-color);
+  font-size: 18px;
 }
 
 .submit-button {
   width: 80%;
   padding: 0.5rem;
   background-color: #007bff;
-  color: #fff;
-  border: none;
+  color: var(--text-color);
+  border: 2px solid var(--secondary-bg-color);
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
   text-transform: uppercase;
+  font-size: 18px;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
+  color: var(--main-bg-color)
 }
 
 /* Product styling */
-/* .products-container img {
-  max-width: 70%;
-  border-radius: 10px;
+.discountedPrice {
+  color: var(--secondary-text-color);
+  text-transform: uppercase;
 }
 
-.products-container {
-  margin: 10px 20px 10px 20px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.product {
-  background-color: red;
-  margin-top: 20px;
-  padding: 20px;
-  align-items: center;
-} */
 .products-container {
   display: block;
   margin-bottom: 20px;
 }
 
-.product {
+.product,
+.product-detail {
   display: flex;
   flex-direction: column;
-  /* Stack the title, price, and image vertically */
   align-items: center;
-  /* Align items to the start of the column */
   margin-bottom: 20px;
   padding: 15px;
-  background-color: #88837593;
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
   padding: 40px;
 }
 
 .product-info {
   margin-right: 20px;
-  /* Add spacing between info and image */
 }
 
 .product-title {
   margin-bottom: 5px;
-  /* Add spacing between title and price */
 }
 
 .product-image {
   max-width: 200px;
+  border-radius: 10px;
+}
+
+.reviews {
+  background-color: var(--secondary-bg-color);
+  padding: 10px;
+  margin: 5px;
   border-radius: 10px;
 }
