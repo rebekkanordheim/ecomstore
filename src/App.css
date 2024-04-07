@@ -40,7 +40,7 @@ nav {
 nav a {
   color: var(--text-color);
   text-decoration: none;
-}
+} 
 
 nav a:hover {
   text-decoration: underline;
@@ -81,6 +81,7 @@ nav li {
   background-color: var(--text-color);
   cursor: pointer;
 }
+
 .continue-to-checkout-btn a {
   text-decoration: none;
   text-transform: uppercase;
@@ -247,4 +248,5 @@ label {
   font-style: oblique;
   margin-top: 40px;
   text-decoration: underline;
+  text-transform: uppercase;
 }
