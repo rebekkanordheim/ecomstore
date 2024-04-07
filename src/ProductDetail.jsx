@@ -7,10 +7,9 @@ function ProductDetail({ addToCart }) {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
 
-  // Define handleAddToCart function here
   const handleAddToCart = () => {
-    addToCart(product); // Call the addToCart function with the product as argument
-    console.log('Product added to cart:', product); // Log to console that product has been added to cart
+    addToCart(product);
+    console.log('Product added to cart:', product);
   };
 
   useEffect(() => {
@@ -43,14 +42,13 @@ function ProductDetail({ addToCart }) {
   }
 
   return (
-    <div key={product.id} className="product-detail">
-      <div className="product-info">
-        <h2 className="product-title">{product.title}</h2>
+    <div key={product.id} className='product-detail'>
+      <div className='product-info'>
+        <h2 className='product-title'>{product.title}</h2>
         <p>{product.description}</p>
-        <h3>Price: ${product.price}</h3>
-        <p className='discountedPrice'>Discounted Price: ${product.discountedPrice}</p>
-        <img className="product-image" src={product.image.url} alt={product.image.alt} />
-        <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
+        <h3>Price: ${product.discountedPrice ? product.discountedPrice : product.price}</h3>
+        <img className='product-image' src={product.image.url} alt={product.image.alt} />
+        <button className='add-to-cart-btn' onClick={handleAddToCart}>Add to Cart</button>
         <div className='reviews'>
           <p>Rating: {product.rating}</p>
           <i>Tags: {product.tags.join(', ')}</i>

@@ -43,28 +43,32 @@ function Products() {
     }
 
     return (
-        <div className="products-container">
+        <div className='products-container'>
             <SearchBar onSearch={handleSearch} />
             {searchedProduct ? (
-                <div className="product">
-                    <div className="product-info">
+                <div className='product'>
+                    <div className='product-info'>
                         <Link to={`/product/${searchedProduct.id}`}>
-                            <h2 className="product-title">{searchedProduct.title}</h2>
+                            <h2 className='product-title'>{searchedProduct.title}</h2>
                         </Link>
-                        <p className="product-price">Price: ${searchedProduct.price}</p>
+                        <p className='product-price'>Price: ${searchedProduct.price}</p>
+                        <Link to={`/product/${searchedProduct.id}`}>
+                            <button className='view-product-btn'>View Product</button>
+                        </Link>
                     </div>
-                    <img className="product-image" src={searchedProduct.image.url} alt={searchedProduct.image.alt} />
+                    <img className='product-image' src={searchedProduct.image.url} alt={searchedProduct.image.alt} />
                 </div>
             ) : (
                 products.map((product) => (
-                    <div key={product.id} className="product">
-                        <div className="product-info">
+                    <div key={product.id} className='product'>
+                        <div className='product-info'>
+                            <h2 className='product-title'>{product.title}</h2>
+                            <p className='product-price'>Price: ${product.price}</p>
+                            <img className='product-image' src={product.image.url} alt={product.image.alt} />
                             <Link to={`/product/${product.id}`}>
-                                <h2 className="product-title">{product.title}</h2>
+                                <button className='view-product-btn'>View Product</button>
                             </Link>
-                            <p className="product-price">Price: ${product.price}</p>
                         </div>
-                        <img className="product-image" src={product.image.url} alt={product.image.alt} />
                     </div>
                 ))
             )}

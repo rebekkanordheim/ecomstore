@@ -63,63 +63,63 @@ function ContactForm() {
 
     return (
         <div>
-            <form onSubmit={onFormSubmit} className="contact-form">
-                <label htmlFor="first-name">First name</label>
+            <form onSubmit={onFormSubmit} className='contact-form'>
+                <label htmlFor='first-name'>First name</label>
                 <input
-                    name="first-name"
+                    name='first-name'
                     value={firstName}
-                    placeholder="Your first name"
+                    placeholder='Your first name'
                     onChange={onFirstNameChange}
                     required
                     minLength={3}
-                    className="form-input"
+                    className='form-input'
                 />
 
-                <label htmlFor="last-name">Last name</label>
+                <label htmlFor='last-name'>Last name</label>
                 <input
-                    name="last-name"
+                    name='last-name'
                     value={lastName}
-                    placeholder="Your last name"
+                    placeholder='Your last name'
                     onChange={onLastNameChange}
                     required
                     minLength={3}
-                    className="form-input"
+                    className='form-input'
                 />
 
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor='subject'>Subject</label>
                 <input
-                    name="subject"
+                    name='subject'
                     value={subject}
-                    placeholder="Subject"
+                    placeholder='Subject'
                     onChange={onSubjectChange}
                     required
                     minLength={3}
-                    className="form-input"
+                    className='form-input'
                 />
 
-                <label htmlFor="email">Email</label>
+                <label htmlFor='email'>Email</label>
                 <input
-                    type="email"
-                    name="email"
+                    type='email'
+                    name='email'
                     value={email}
-                    placeholder="Your email"
+                    placeholder='Your email'
                     onChange={onEmailChange}
                     required
-                    className="form-input"
+                    className='form-input'
                 />
 
-                <label htmlFor="body">Body</label>
+                <label htmlFor='body'>Body</label>
                 <textarea
-                    name="body"
+                    name='body'
                     value={body}
-                    placeholder="Your message"
+                    placeholder='Your message'
                     onChange={onBodyChange}
                     required
                     minLength={3}
-                    className="form-textarea"
+                    className='form-textarea'
                 />
 
-                <button type="submit" className="submit-button">Submit</button>
+                <button type='submit' className='submit-button'>Submit</button>
             </form>
         </div>
     );

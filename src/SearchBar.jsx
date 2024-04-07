@@ -15,13 +15,13 @@ function SearchBar({ onSearch }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        type="text"
-        placeholder="Search..."
+        type='text'
+        placeholder='Search...'
         value={searchTerm}
         onChange={handleChange}
         className='searchbar'
       />
-      <button className="search-btn" type="submit">Search</button>
+      <button className='search-btn' type='submit'>Search</button>
     </form>
   );
 }

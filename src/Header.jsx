@@ -1,26 +1,24 @@
-import React from "react";
-import "./App.css";
-import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar";
+import React from 'react';
+import './App.css';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
   return (
     <div>
-      <nav className="nav">
+      <nav className='nav'>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to='/products'>Products</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to='/contact'>Contact</Link>
           </li>
-
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to='/cart'>Cart</Link>
           </li>
           
         </ul>
@@ -30,3 +28,4 @@ function Header() {
 }
 
 export default Header;
+
