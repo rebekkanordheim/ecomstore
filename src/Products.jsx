@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 function Products() {
     const [products, setProducts] = useState([]);
+    const [searchedProduct, setSearchedProduct] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -27,6 +29,11 @@ function Products() {
         fetchData();
     }, []);
 
+    const handleSearch = (searchTerm) => {
+        const foundProduct = products.find(product => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+        setSearchedProduct(foundProduct);
+    };
+
     if (isLoading) {
         return <div>Loading products...</div>;
     }
@@ -37,19 +44,32 @@ function Products() {
 
     return (
         <div className="products-container">
-          {products.map((product) => (
-            <div key={product.id} className="product">
-              <div className="product-info">
-                <Link to={`/product/${product.id}`}>
-                  <h2 className="product-title">{product.title}</h2>
-                </Link>
-                <p className="product-price">Price: ${product.price}</p>
-              </div>
-              <img className="product-image" src={product.image.url} alt={product.image.alt} />
-            </div>
-          ))}
+            <SearchBar onSearch={handleSearch} />
+            {searchedProduct ? (
+                <div className="product">
+                    <div className="product-info">
+                        <Link to={`/product/${searchedProduct.id}`}>
+                            <h2 className="product-title">{searchedProduct.title}</h2>
+                        </Link>
+                        <p className="product-price">Price: ${searchedProduct.price}</p>
+                    </div>
+                    <img className="product-image" src={searchedProduct.image.url} alt={searchedProduct.image.alt} />
+                </div>
+            ) : (
+                products.map((product) => (
+                    <div key={product.id} className="product">
+                        <div className="product-info">
+                            <Link to={`/product/${product.id}`}>
+                                <h2 className="product-title">{product.title}</h2>
+                            </Link>
+                            <p className="product-price">Price: ${product.price}</p>
+                        </div>
+                        <img className="product-image" src={product.image.url} alt={product.image.alt} />
+                    </div>
+                ))
+            )}
         </div>
-      );
+    );
 }
 
 export default Products;

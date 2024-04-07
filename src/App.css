@@ -1,15 +1,16 @@
 :root {
-  --main-color: rgba(255, 105, 180, 0.598);
+  --main-color: #3b657e;
+  --main-color-light: #7ea6bd97;
   --main-bg-color: white;
-  --secondary-bg-color: rgba(0, 98, 255, 0.467);
-  --text-color: black;
-  --secondary-text-color: rgba(255, 0, 136, 0.636);
+  --secondary-bg-color: #EAEAEA;
+  --text-color: #BF8351;
+  --secondary-text-color: rgba(255, 0, 0);
 }
 
 /* My CSS */
 body {
   background-color: var(--main-color);
-  color: var(--text-color);
+  color: var(--secondary-bg-color);
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 2.5rem;
@@ -30,10 +31,12 @@ header {
 }
 
 nav {
-  background-color: var(--main-color);
+  background-color: var(--secondary-bg-color);
   color: var(--text-color);
+  border: 2px solid var(--secondary-bg-color);
   border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-transform: uppercase;
 }
 
@@ -48,15 +51,38 @@ nav a:hover {
 
 nav li {
   display: inline-block;
-  padding: 20px;
-  padding-right: 20px;
-  padding-right: 20px;
+  padding: 10px;
   margin: 0;
   color: var(--text-color);
 }
 
+.searchbar {
+  padding-left: 25px;
+  margin: 10px;
+  height: 40px;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  background-color: var(--secondary-bg-color);
+  font-size: 12px;
+}
+
+.search-btn,
+.add-to-cart-btn,
+.continue-to-checkout-btn {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--secondary-bg-color);
+  border: none;
+}
+
+.search-btn:hover,
+.add-to-cart-btn:hover,
+.continue-to-checkout-btn:hover {
+  background-color: var(--text-color);
+}
+
 footer {
-  background-color: var(--main-color);
+  background-color: var(--secondary-bg-color);
   color: var(--text-color);
   padding: 10px;
   border-radius: 10px;
@@ -158,6 +184,7 @@ label {
   background-color: var(--main-bg-color);
   border-radius: 10px;
   padding: 40px;
+  color: black;
 }
 
 .product-info {
@@ -166,6 +193,10 @@ label {
 
 .product-title {
   margin-bottom: 5px;
+}
+
+.product-price {
+  color: black;
 }
 
 .product-image {
@@ -178,4 +209,35 @@ label {
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
+}
+
+/* Cart page */
+.cart-products,
+.checkout-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--main-bg-color);
+  border-radius: 10px;
+  padding: 40px;
+  color: black;
+}
+
+.specific-cart-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: var(--main-color-light);
+  border-radius: 10px;
+  border: 2px solid var(--main-color);
+  padding: 40px;
+  color: black;
+}
+
+.cart-products li {
+  list-style-type: none
 }

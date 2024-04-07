@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import { Link } from "react-router-dom";
-import Form from 'react-bootstrap/Form';
+import SearchBar from "./SearchBar";
+
 
 function Header() {
   return (
@@ -17,6 +18,11 @@ function Header() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+
+          <li>
+            <Link to="/cart">Cart</Link>
+          </li>
+          
         </ul>
       </nav>
     </div>

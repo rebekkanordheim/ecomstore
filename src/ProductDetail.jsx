@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function ProductDetail() {
+function ProductDetail({ addToCart }) {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+
+  // Define handleAddToCart function here
+  const handleAddToCart = () => {
+    addToCart(product); // Call the addToCart function with the product as argument
+    console.log('Product added to cart:', product); // Log to console that product has been added to cart
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -44,6 +50,7 @@ function ProductDetail() {
         <h3>Price: ${product.price}</h3>
         <p className='discountedPrice'>Discounted Price: ${product.discountedPrice}</p>
         <img className="product-image" src={product.image.url} alt={product.image.alt} />
+        <button className="add-to-cart-btn" onClick={handleAddToCart}>Add to Cart</button>
         <div className='reviews'>
           <p>Rating: {product.rating}</p>
           <i>Tags: {product.tags.join(', ')}</i>
@@ -64,5 +71,3 @@ function ProductDetail() {
 }
 
 export default ProductDetail;
-
-
