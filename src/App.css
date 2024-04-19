@@ -3,8 +3,6 @@
   --main-color-light: #7ea6bd97;
   --main-bg-color: white;
   --secondary-bg-color: #EAEAEA;
-  --text-color: #BF8351;
-  --secondary-text-color: rgba(255, 0, 0);
 }
 
 body {
@@ -29,7 +27,7 @@ header {
 
 nav {
   background-color: var(--secondary-bg-color);
-  color: var(--text-color);
+  color: var(--main-color);
   border: 2px solid var(--secondary-bg-color);
   border-radius: 10px;
   margin-top: 20px;
@@ -38,7 +36,7 @@ nav {
 }
 
 nav a {
-  color: var(--text-color);
+  color: var(--main-color);
   text-decoration: none;
 } 
 
@@ -78,7 +76,7 @@ nav li {
 .add-to-cart-btn:hover,
 .continue-to-checkout-btn:hover,
 .view-product-btn:hover {
-  background-color: var(--text-color);
+  background-color: var(--main-color);
   cursor: pointer;
 }
 
@@ -89,7 +87,7 @@ nav li {
 
 footer {
   background-color: var(--secondary-bg-color);
-  color: var(--text-color);
+  color: var(--main-color);
   padding: 10px;
   border-radius: 10px;
   text-align: center;
@@ -106,7 +104,7 @@ footer {
   align-items: center;
   padding: 20px;
   background-color: var(--main-bg-color);
-  color: var(--text-color);
+  color: var(--main-color);
   border-radius: 10px;
   max-width: 80%;
   margin: 0 auto;
