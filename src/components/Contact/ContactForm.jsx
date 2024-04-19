@@ -47,7 +47,7 @@ function ContactForm() {
 
     return (
         <div>
-            {formSubmitted && <p className='success-essage'>Thank you for your submission!</p>}
+            {formSubmitted && <p className='success-message'>Thank you for your submission!</p>}
             {formError && <p className="error-message">{formError}</p>}
             <form onSubmit={onFormSubmit} className='contact-form'>
                 <label htmlFor='first-name'>First name</label>
