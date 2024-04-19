@@ -38,7 +38,7 @@ nav {
 nav a {
   color: var(--main-color);
   text-decoration: none;
-} 
+}
 
 nav a:hover {
   text-decoration: underline;
@@ -57,7 +57,7 @@ nav li {
   border: 1px solid var(--main-color);
   border-radius: 5px;
   background-color: var(--secondary-bg-color);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .search-btn,
