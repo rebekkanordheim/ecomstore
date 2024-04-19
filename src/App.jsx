@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Products from './Products';
-import ProductDetail from './ProductDetail';
-import ContactPage from './ContactPage';
+import Layout from './components/Layout/Layout';
+import Products from './components/Product/Products';
+import ProductDetail from './components/Product/ProductDetail';
+import ContactPage from './components/Contact/ContactPage';
 import Home from './Home';
-import Cart from './Cart';
-import Checkout from './Checkout';
+import Cart from './components/Cart/Cart';
+import Checkout from './components/Cart/Checkout';
 import './App.css';
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />
+      <Layout />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -30,7 +29,6 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<h1>Route not found</h1>} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
