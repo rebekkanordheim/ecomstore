@@ -96,6 +96,10 @@ footer {
 }
 
 /* Form styling */
+.success-essage {
+  color: greenyellow;
+  text-align: center;
+}
 .contact-form {
   display: flex;
   flex-direction: column;

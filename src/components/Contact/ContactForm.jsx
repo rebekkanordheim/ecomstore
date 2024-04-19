@@ -6,39 +6,23 @@ function ContactForm() {
     const [subject, setSubject] = useState('');
     const [email, setEmail] = useState('');
     const [body, setBody] = useState('');
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [formError, setFormError] = useState('');
 
     function onFormSubmit(event) {
         event.preventDefault();
-        const formData = {
-            firstName,
-            lastName,
-            subject,
-            email,
-            body,
-        };
-        console.log(formData);
+        if (!validateForm()) {
+            setFormError('Please fill out all fields correctly.');
+            return;
+        }
 
-        fetch('https://v2.api.noroff.dev/online-shop', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        }).then(response => {
-            if (response.ok) {
-                alert('Form submitted successfully!');
-                setFirstName('');
-                setLastName('');
-                setSubject('');
-                setEmail('');
-                setBody('');
-            } else {
-                alert('Failed to submit form. Please try again later.');
-            }
-        }).catch(error => {
-            console.error('Error submitting form:', error);
-            alert('Failed to submit form. Please try again later.');
-        });
+        console.log("Form Data:", { firstName, lastName, subject, email, body });
+        setFormSubmitted(true);
+        setFormError('');
+    }
+
+    function validateForm() {
+        return firstName && lastName && subject && email && body;
     }
 
     function onFirstNameChange(event) {
@@ -63,6 +47,8 @@ function ContactForm() {
 
     return (
         <div>
+            {formSubmitted && <p className='success-essage'>Thank you for your submission!</p>}
+            {formError && <p className="error-message">{formError}</p>}
             <form onSubmit={onFormSubmit} className='contact-form'>
                 <label htmlFor='first-name'>First name</label>
                 <input
