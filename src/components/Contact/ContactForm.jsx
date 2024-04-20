@@ -19,6 +19,11 @@ function ContactForm() {
         console.log("Form Data:", { firstName, lastName, subject, email, body });
         setFormSubmitted(true);
         setFormError('');
+        setFirstName('');
+        setLastName('');
+        setSubject('');
+        setEmail('');
+        setBody('');
     }
 
     function validateForm() {
